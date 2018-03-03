@@ -1,5 +1,9 @@
 q<-paste0("patriots,pats,patriotsnation,falcons,dirty birds,riseup")
-streamtime<-60*60*4   #stream for 4 hours
+  #change these keywords if you're searching for something else
+
+streamtime<-60*60*4  
+  #stream for 4 hours
+
 filename<-file.path(
   rtweet.folder,paste0(format(Sys.time(),"%F-%H-%S"),".json")
 )
@@ -7,6 +11,7 @@ metadata<-paste0("q=",q,"\n",
                  "streamtime=",streamtime,"\n",
                  "filename=",filename)
 metafile<-gsub(".json$",".txt",filename)
+
 cat(metadata,file=metafile)
   #now we have generated the file to be used to stream stuff
 
